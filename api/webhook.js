@@ -14,7 +14,8 @@ export default async function handler(req, res) {
   }
 
   if (req.method === "POST") {
-  const MAKE_WEBHOOK_URL = "YOUR_MAKE_WEBHOOK_URL";
+  const MAKE_WEBHOOK_URL =
+    "https://hook.eu1.make.com/3nitf6249jnqcoracs58a2p2jxdbj1a7";
 
   await fetch(MAKE_WEBHOOK_URL, {
     method: "POST",
