@@ -14,9 +14,18 @@ export default async function handler(req, res) {
   }
 
   if (req.method === "POST") {
-    console.log(req.body);
-    return res.status(200).json({ success: true });
-  }
+  const MAKE_WEBHOOK_URL = "YOUR_MAKE_WEBHOOK_URL";
+
+  await fetch(MAKE_WEBHOOK_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(req.body),
+  });
+
+  return res.status(200).json({ success: true });
+}
 
   return res.status(405).send("Method Not Allowed");
 }
